@@ -2,9 +2,6 @@
 
 int main()
 {
-
-	 cout << "Hello _world!/n" ;
-
- return 0;
- 
+	cout <<"Hello, World!\n";
+	return 0;
 }
