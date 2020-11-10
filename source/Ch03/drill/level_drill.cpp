@@ -28,9 +28,10 @@ int main()
 	
 	if(friend_sex == 'm')
 		cout << "If you see " << friend_name << " please ask him to call me.\n";
-	if(friend_sex == 'f')
+	else if(friend_sex == 'f')
 		cout << "If you see " << friend_name << " please ask her to call me.\n";
-	
+	else(error("The unit, you entered, is not a gender."));
+
 	int age = 0;
 	cin >> age;
 	

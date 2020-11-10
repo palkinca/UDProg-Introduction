@@ -2,7 +2,7 @@
 int main()
 try{
 	//1
-	//	!!Cout << "Success!\n";
+	// !!Cout << "Success!\n";
 	//cout << "Success!\n";
 	//2
 	//	!!cout << "Success!\n;

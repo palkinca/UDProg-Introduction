@@ -85,12 +85,20 @@ int main()
  
     }
     cout << "The sums in order: " << endl;
+    
     sort(numberSum);
+    
     for (double y : numberSum)
     {
         cout << y << 'm' << endl;
     }
+    vector<double> numberSum;
+    {
+    	cout <<"The largest number: " << largest << "m\n";
+    	cout <<"The smallest number: " << smallest << "m\n";
+    }
     cout << sum << "m is the sum of the units." << endl;
+    
     return 0;
 }
 
