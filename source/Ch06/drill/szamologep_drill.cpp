@@ -70,10 +70,10 @@ Token Token_stream::get()
     char ch;
     cin >> ch;    // note that >> skips whitespace (space, newline, tab, etc.)
 
-    switch (ch) {
-    case '{':
-    case ';':    // for "print"
-    case 'q':    // for "quit"
+    switch (ch){
+    
+    case '=':    // for "print"
+    case 'x':    // for "quit"
     case '(': case ')': case '+': case '-': case '*': case '/':
         return Token(ch);        // let each character represent itself
     case '.':
@@ -114,12 +114,6 @@ double primary()
         if (t.kind != ')') error("')' expected");
             return d;
     }
-    case '{':
-    {
-        double d = expression();
-        t = ts.get();
-        if (t.kind != '}') error("'}' expected");
-    }
     case '8':            // we use '8' to represent a number
         return t.value;  // return the number's value
     default:
@@ -139,6 +133,7 @@ double term()
         case '*':
             left *= primary();
             t = ts.get();
+            break;
         case '/':
         {
             double d = primary();
@@ -177,14 +172,21 @@ double expression()
 }
 //------------------------------------------------------------------------------
 int main()
+{
+    cout << "Welcome to our simple calculator.\n";
+    cout << "Please enter expressions using floating-point numbers.\n";
+    cout << "Available operators: + - * / ( )\n";
+    cout << "To get the result, you have to enter the '=' operator after the expression.\n";
+    cout << "If you want to exit the program, cout 'x'.\n";
+
 try
 {
     double val = 0;
 
     while (cin) {
         Token t = ts.get();
-        if (t.kind == 'q') break; // 'q' for quit
-        if (t.kind == ';')        // ';' for "print now"
+        if (t.kind == 'x') break; // 'q' for quit
+        if (t.kind == '=')        // ';' for "print now"
             cout << "=" << val << '\n';
         else
             ts.putback(t);
@@ -203,4 +205,5 @@ catch (...) {
     cerr << "Oops: unknown exception!\n";
     keep_window_open();
     return 2;
+}
 }
