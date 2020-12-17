@@ -10,7 +10,6 @@ ostream& print_array(ostream& os, int* a, int n)
 int main()
 {
 	int a = 7;
-	//elkerjuk az a integer cimet az & jellel
 	int *p1 = &a;
 	cout << "the value of the p1 pointer: " << p1 << " and p1 pointer points to the element: " << *p1 << endl; 
 	cout << endl;
@@ -22,7 +21,6 @@ int main()
 		cout << p2[i] << endl;
 	cout << endl;
 
-	//mivel p3-ban elmentettuk a p2-t, majd p2-ben elmentjuk p1, de p2-be bementjuk p3, ezert mikor p2= p3 akkor ugyancsak sajat onmagara fog mutatni
 	int* p3 = p2;
 	p2 = p1;
 	p2 = p3;

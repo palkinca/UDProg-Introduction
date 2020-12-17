@@ -9,7 +9,7 @@ void f(int* af, int n)
 		la[i] = af[i];
 
 	cout << "Print in the function: \n";
-	for(auto k : la)	//for(int i = 0; i < n; i++)
+	for(auto k : la)	
 		cout << k << ' ';
 	cout << endl;
 
@@ -18,7 +18,7 @@ void f(int* af, int n)
 	for(int i = 0; i < n; ++i)
 		p[i] = af[i];
 
-	for(auto h : la)	//for(int i = 0; i < n; i++)
+	for(auto h : la)	
 		cout << h << ' ';
 	cout << endl;
 

@@ -24,13 +24,10 @@ ostream& print_vector(ostream& os, vector<int>& b)
 
 int main()
 {
-	//pointer
 	int* a = new int[10];
 
 	for(int i = 0; i < 10; ++i)
 		cout << a[i] << endl;
-
-	//delete[] a;
 
 	print_array10(cout, a);
 	cout << endl;
